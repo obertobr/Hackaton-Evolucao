@@ -1,0 +1,169 @@
+:root {
+  --style1: #1E1E1E;
+  --style2: #282828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+  
+}
+
+a {
+  all: unset;
+  cursor: pointer;
+}
+
+body {
+  background-color: black;
+  color: white;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+}
+
+header {
+  width: 100%;
+  height: 50px;
+  background-color: var(--style1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 700;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.operation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--style2);
+  width: 60%;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 5px;
+}
+
+.operation > span {
+  font-size: 50px;
+}
+
+.operationBtn {
+  width: 100%;
+  display: flex;
+  justify-content:space-between
+}
+
+.operationBtn > button {
+  background-color: var(--style1);
+  border: none;
+  width: 49%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.operationBtn > button:hover {
+  filter: brightness(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+#add {
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+#add:hover {
+  filter: brightness(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+#add > button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+#add > button > img {
+  height: 115px;
+}
+
+#cam {
+  width: 60%;
+  background-color: var(--style2);
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px 0px;
+}
+
+.viewport {
+  display: grid;
+}
+
+.viewport * {
+  object-fit:cover;
+  width: 100%;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  border-radius: 10px;
+}
+
+main > input {
+  background-color: var(--style2);
+  color: white;
+  border: none;
+  width: 60%;
+  margin: 10px 0px;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px 15px;
+}
+
+main > input::placeholder {
+  color: var(--style1);
+}
+
+#enviar:hover {
+  cursor: pointer;
+  filter: brightness(1.1);
+  transition: all 0.1s ease-in-out;
+}
+
+#login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#login > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 610px;
+}
+
+#login p {
+  font-size: 30px;
+}
+
+#login input {
+  background-color: var(--style2);
+  color: white;
+  border: none;
+  margin: 10px 0px;
+  border-radius: 10px;
+  font-size: 30px;
+  padding: 5px 15px;
+}
+
+#login > #enviar {
+  width: 610px;
+}
