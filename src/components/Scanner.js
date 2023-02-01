@@ -12,7 +12,7 @@ const Scanner = props => {
         "width": { "min": 450 },
       "height": { "min": 300 },
         "facingMode": "environment",
-        "deviceId": "1d262a4eb8ad6726c7686eb2ce3e7f9443ad5941ff03c02df19d1667e31d456e",
+        //"deviceId": "1d262a4eb8ad6726c7686eb2ce3e7f9443ad5941ff03c02df19d1667e31d456e",
         "aspectRatio": { "min": 1, "max": 2 }
       }
     },
