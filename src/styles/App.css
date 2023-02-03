@@ -24,15 +24,19 @@ body {
 
 header {
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: var(--style1);
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 40px;
+  font-size: 3.5vw;
   font-weight: 700;
-
 }
+
+#img-home{
+  color: white;
+}
+
 
 main {
   display: flex;
@@ -41,18 +45,24 @@ main {
 }
 
 .operation {
+  width: 60%;
+  margin: 10px 0px;
+  padding: 5px;
+  background-color: var(--style2);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--style2);
-  width: 60%;
-  border-radius: 10px;
-  margin: 10px 0px;
-  padding: 5px;
+}
+
+@media only screen and (max-width: 768px) { 
+  .operation {
+    width: 80%;
+  }
 }
 
 .operation > span {
-  font-size: 50px;
+  font-size: 5vh;
 }
 
 .operationBtn {
@@ -90,7 +100,7 @@ main {
 }
 
 #add > button > img {
-  height: 115px;
+  height: 60px;
 }
 
 #cam {
@@ -120,7 +130,7 @@ main > input {
   width: 60%;
   margin: 10px 0px;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 1.5em; /* alterei o tamanho da fonte para uma unidade relativa */
   padding: 5px 15px;
 }
 
@@ -146,12 +156,13 @@ main > input::placeholder {
 #login > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 610px;
+  justify-content: space-evenly;
+  width: 900px;
 }
 
 #login p {
-  font-size: 30px;
+  width: 30vh;
+  font-size: 3vh;
 }
 
 #login input {
@@ -160,10 +171,28 @@ main > input::placeholder {
   border: none;
   margin: 10px 0px;
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 3vh;
   padding: 5px 15px;
+  width: 70vh;
 }
 
 #login > #enviar {
   width: 610px;
+}
+
+@media (max-width: 768px) {
+  #login {
+    width: 100vw;
+    height: auto;
+  }
+  #login > div {
+    width: 100%;
+    flex-direction: column;
+  }
+  #login p, #login input {
+    width: 100%;
+  }
+  #login #enviar {
+    width: 100%;
+  }
 }

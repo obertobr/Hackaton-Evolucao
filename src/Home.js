@@ -15,7 +15,7 @@ export default function() {
                 <Operation />
                 <Operation />
                 <Link to="/AddOperation" className="operation" id="add">
-                        <span>INICIAR OPERAÇÃO</span>
+                        <span>INICIAR</span>
                         <button id="plus"><img src={plus} /></button>
                 </Link>
             </main>

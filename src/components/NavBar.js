@@ -12,7 +12,7 @@ export function NavBar() {
 
     return (
         <header>
-            <Link to="/">Home</Link>
+            <Link to="/">Início</Link>
             <Link to="/login">Usuario: {operador}</Link>
         </header>
     );
