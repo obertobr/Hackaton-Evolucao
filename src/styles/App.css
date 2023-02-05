@@ -1,6 +1,22 @@
 :root {
   --style1: #1E1E1E;
   --style2: #282828;
+  --tamanho: 60%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --tamanho: 99%;
+  }
+
+  #login > div {
+    width: 97% !important;
+    flex-direction: column;
+    align-items:normal !important;
+  }
+  #login input {
+    width: 100% !important;
+  }
 }
 
 * {
@@ -45,7 +61,7 @@ main {
 }
 
 .operation {
-  width: 60%;
+  width: var(--tamanho);
   margin: 10px 0px;
   padding: 5px;
   background-color: var(--style2);
@@ -54,13 +70,6 @@ main {
   flex-direction: column;
   align-items: center;
 }
-
-@media only screen and (max-width: 768px) { 
-  .operation {
-    width: 80%;
-  }
-}
-
 .operation > span {
   font-size: 5vh;
 }
@@ -104,7 +113,7 @@ main {
 }
 
 #cam {
-  width: 60%;
+  width: var(--tamanho);
   background-color: var(--style2);
   padding: 10px;
   border-radius: 10px;
@@ -123,18 +132,18 @@ main {
   border-radius: 10px;
 }
 
-main > input {
+main input {
   background-color: var(--style2);
   color: white;
   border: none;
-  width: 60%;
+  width: var(--tamanho);
   margin: 10px 0px;
   border-radius: 10px;
   font-size: 1.5em; /* alterei o tamanho da fonte para uma unidade relativa */
   padding: 5px 15px;
 }
 
-main > input::placeholder {
+main input::placeholder {
   color: var(--style1);
 }
 
@@ -173,26 +182,42 @@ main > input::placeholder {
   border-radius: 10px;
   font-size: 3vh;
   padding: 5px 15px;
-  width: 70vh;
+  width: 70vw;
 }
 
 #login > #enviar {
   width: 610px;
 }
 
-@media (max-width: 768px) {
-  #login {
-    width: 100vw;
-    height: auto;
-  }
-  #login > div {
-    width: 100%;
-    flex-direction: column;
-  }
-  #login p, #login input {
-    width: 100%;
-  }
-  #login #enviar {
-    width: 100%;
-  }
+#codigo {
+  position:relative;
+  padding:0;
+  margin:0;
+  display: flex;
+  width: var(--tamanho);
+  display: flex;
+  align-items: center;
+}
+
+#codigo input{
+  width: 100%;
+}
+
+#codigo > img{
+  position:absolute;
+  right:10px;
+  width: 30px;
+  filter: invert(1);
+  cursor: pointer;
+}
+
+#cam > select {
+  background-color: var(--style1);
+  color: white;
+  border: none;
+  width: 100%;
+  margin: 10px 0px;
+  border-radius: 10px;
+  font-size: 1.5em; /* alterei o tamanho da fonte para uma unidade relativa */
+  padding: 5px 15px;
 }

@@ -1,9 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Quagga from "quagga";
   
 
 const Scanner = props => {
   const { onDetected} = props;
+
+  const [started, setStarted] = useState(false);
+
 
   const config = {
     "inputStream": {
@@ -12,7 +15,7 @@ const Scanner = props => {
         "width": { "min": 450 },
       "height": { "min": 300 },
         "facingMode": "environment",
-        //"deviceId": "1d262a4eb8ad6726c7686eb2ce3e7f9443ad5941ff03c02df19d1667e31d456e",
+        "deviceId": props.id,
         "aspectRatio": { "min": 1, "max": 2 }
       }
     },
@@ -29,16 +32,21 @@ const Scanner = props => {
   }
 
   useEffect(() => {
+    if(started){
+      Quagga.stop()
+    }
     Quagga.init(config, err => {
       if (err) {
         console.log(err, "error msg");
+        alert(err)
       }
       Quagga.start();
       return () => {
         Quagga.stop()
       }
     });
-
+  
+    setStarted(true)
     //detecting boxes on stream
     Quagga.onProcessed(result => {
       var drawingCtx = Quagga.canvas.ctx.overlay,
@@ -83,7 +91,7 @@ const Scanner = props => {
     });
 
     Quagga.onDetected(detected);
-  }, []);
+  }, [props.id]);
 
   const detected = result => {
     onDetected(result.codeResult.code);
