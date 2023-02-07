@@ -37,8 +37,7 @@ const Scanner = props => {
     }
     Quagga.init(config, err => {
       if (err) {
-        console.log(err, "error msg");
-        alert(err)
+        alert("O dispostivo não tem camera ou não esta habilitado o acesso a camera")
       }
       Quagga.start();
       return () => {
