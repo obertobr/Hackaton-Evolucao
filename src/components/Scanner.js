@@ -26,7 +26,7 @@ const Scanner = props => {
     "numOfWorkers": 2,
     "frequency": 10,
     "decoder": {
-      "readers": ["code_128_reader", "upc_reader", "ean_reader"]
+      "readers": ["code_39_reader"]
     },
     "locate": true
   }
