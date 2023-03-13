@@ -16,7 +16,7 @@ export function Operation({ info, setOperacoes, operacoes }) {
   const config = {
     method: 'post',
     maxBodyLength: Infinity,
-    url: 'http://192.168.0.10:5100/',
+    url: 'http://127.0.0.1/api',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'
     },

@@ -27,7 +27,7 @@ export default function () {
     const config = {
         method: 'post',
         maxBodyLength: Infinity,
-        url: 'http://192.168.0.10:5100/',
+        url: 'http://127.0.0.1/api',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
@@ -91,7 +91,7 @@ export default function () {
             <main>
                 {cameraShow &&
                     <div id="cam">
-                        <select onChange={(e) => { setCameraID(e.target.value) }}>
+                        <select onChange={(e) => { setCameraID(e.target.value) }} onClick={() => {listWebcams()}}>
                             <option disabled selected value> -- Selecione uma opção -- </option>
                             {cameraList.map(function (o, i) {
                                 if (o.kind === "videoinput") {
