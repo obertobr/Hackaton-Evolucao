@@ -1,5 +1,6 @@
 const express = require('express');
 var cors = require('cors')
+const path = require('path');
 const app = express();
 app.use(cors())
 app.use(express.urlencoded({ extended: false }))
@@ -7,7 +8,7 @@ app.use(express.urlencoded({ extended: false }))
 var myHeaders = new Headers();
 myHeaders.append("Content-Type", "application/x-www-form-urlencoded");
 
-app.post('/', function (req, res, next) {
+app.post('/api', function (req, res, next) {
   console.log(req.body)
 
   var urlencoded = new URLSearchParams();
@@ -30,6 +31,16 @@ app.post('/', function (req, res, next) {
     .then(result => res.send(result))
     .catch(error => console.log('error', error));
 });
-app.listen(5100, function () {
-  console.log('App está escutando na porta 5100!');
+
+app.get(['/','/Home','/AddOperation'],function(req,res){
+  res.sendFile(path.join(__dirname+'/build/index.html'));
+});
+
+app.get('/*',function(req,res){
+  res.sendFile(path.join(__dirname+'/build/'+req.originalUrl))
+});
+ 
+
+app.listen(80, function () {
+  console.log('App está escutando na porta 80!');
 });
