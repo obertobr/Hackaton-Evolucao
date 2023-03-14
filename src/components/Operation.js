@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from 'axios';
 import qs from 'qs';
 import xmlReader from 'xml-reader';
@@ -39,7 +39,7 @@ export function Operation({ info, setOperacoes, operacoes }) {
         if (xmlReader.parseSync(response.data) !== undefined) {
           setOperacoes(JSON.stringify(
             JSON.parse(operacoes).map(e => {
-              if (e.codRota == info.codRota) {
+              if (e.codRota === info.codRota) {
                 return { ...e, parado: true }
               } else {
                 return e
@@ -71,7 +71,7 @@ export function Operation({ info, setOperacoes, operacoes }) {
         if (xmlReader.parseSync(response.data) !== undefined) {
           setOperacoes(JSON.stringify(
             JSON.parse(operacoes).map(e => {
-              if (e.codRota == info.codRota) {
+              if (e.codRota === info.codRota) {
                 return { ...e, parado: false }
               } else {
                 return e
@@ -119,10 +119,10 @@ export function Operation({ info, setOperacoes, operacoes }) {
       <span>{info.codRota}</span>
       <div className="operationBtn">
         {info.parado ?
-          <button onClick={() => voltar()} id="refresh"><img src={refresh} /></button> :
+          <button onClick={() => voltar()} id="refresh"><img src={refresh} alt="voltar" /></button> :
           <>
-            <button onClick={() => setShowModal(true)}><img src={pause} /></button>
-            <button onClick={() => finalizar()}><img src={check} /></button>
+            <button onClick={() => setShowModal(true)}><img src={pause} alt="pausar" /></button>
+            <button onClick={() => finalizar()}><img src={check} alt="confirmar" /></button>
           </>
         }
       </div>

@@ -12,7 +12,7 @@ import Scanner from './components/Scanner'
 import cameraOn from "./icons/cameraOn.svg"
 import cameraOff from "./icons/cameraOff.svg"
 
-export default function () {
+export default function AddOperation() {
     const [codRota, setCodRota] = useState("");
     const [maquina, setMaquina] = useState("");
 
